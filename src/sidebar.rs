@@ -28,6 +28,7 @@ impl Component for Sidebar {
             Link { text: "first_link".to_string(), url: "first_url".to_string() },
             Link { text: "second_link".to_string(), url: "second_url".to_string() },
         ];
+
         let state = State {
             title: "initial_title".to_string(),
             links,
@@ -46,12 +47,28 @@ impl Component for Sidebar {
     }
 
     fn view(&self) -> Html<Self> {
+        let links = &self.state.links
+            .iter()
+            .enumerate()
+            .map(|x| self.view_links(x));
+
         html! {
             <div class="col sidebar" onclick=|_| Msg::UpdateTitle>
-                { &self.state.title }
-                <SideBarLink text="first" />
-                <SideBarLink text="second" />
+                { for self.state.links.iter().enumerate().map(|x|self.view_links(x)) }
+//                <SideBarLink text="first" />
+//                <SideBarLink text="second" />
+//                { links }
             </div>
         }
     }
 }
+
+impl Sidebar {
+    fn view_links(&self, (idx, template): (usize, &Link)) -> Html<Self> {
+        //let tmpl = template;
+        html! {
+            <SideBarLink text={&template.text} />
+        }
+    }
+}
+

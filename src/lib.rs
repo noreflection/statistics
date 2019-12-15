@@ -11,7 +11,7 @@ mod body;
 use header::ListHeader;
 use sidebar::Sidebar;
 use item::ListItem;
-use list::{List, Msg as ListMsg};
+//use list::{List, Msg as ListMsg};
 use body::Body;
 use yew::prelude::*;
 
