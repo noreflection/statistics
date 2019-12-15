@@ -8,6 +8,7 @@ pub struct SideBarLink {
 pub struct Props {
     #[props(required)]
     pub text: String,
+    pub to: String,
 }
 
 pub enum Msg {
@@ -32,7 +33,7 @@ impl Component for SideBarLink {
 
     fn view(&self) -> Html<Self> {
         html! {
-            <div class="sidebar__link" onclick=|_| Msg::UpdateText>
+            <div class="sidebar__link" onclick=|_| Msg::UpdateText href={String::from(&self.props.to)}>
                 { &self.props.text }
             </div>
         }

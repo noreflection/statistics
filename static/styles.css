@@ -10,7 +10,8 @@ html, body {
   /*margin-top: 40px;*/
   /*width: 100%;*/
   /*align-items: center;*/
-  max-width: 960px;
+  
+  /*max-width: 960px;*/
   margin: auto;
   font-family: sans-serif;
   line-height: 1.5;
@@ -18,8 +19,12 @@ html, body {
 
 .app_container {
   display: flex;
+  justify-content: space-between;
+  padding-left: 10%;
+  padding-right: 10%;
   padding-top: 5%;
   margin: auto -1rem 1rem;
+  /*width: 150%;*/
 }
 
 .list-container {
@@ -109,7 +114,7 @@ html, body {
 }
 
 .sidebar {
-  flex: 1;
+  flex: 2;
   /*border-style: dashed;*/
   border-radius: 0px;
   border: 1px solid #666;
@@ -117,6 +122,7 @@ html, body {
 
 .sidebar__link {
   /*border-style: dotted;*/
+  text-align: center;
   border-radius: 0px;
   border: 1px solid #666;
   /* padding: 1 1 1 1; */
@@ -125,7 +131,7 @@ html, body {
 }
 
 .other {
-  flex: 3;
+  flex: 6;
   border-radius: 0px;
   border: 1px solid #666;
   /*border-style: dashed;*/

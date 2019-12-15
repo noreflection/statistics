@@ -25,8 +25,8 @@ impl Component for Sidebar {
 
     fn create(_: (), _: ComponentLink<Self>) -> Self {
         let links = vec![
-            Link { text: "first_link".to_string(), url: "first_url".to_string() },
-            Link { text: "second_link".to_string(), url: "second_url".to_string() },
+            Link { text: "first_link".to_string(), url: "/first_url".to_string() },
+            Link { text: "second_link".to_string(), url: "/second_url".to_string() },
         ];
 
         let state = State {
@@ -67,7 +67,7 @@ impl Sidebar {
     fn view_links(&self, (idx, template): (usize, &Link)) -> Html<Self> {
         //let tmpl = template;
         html! {
-            <SideBarLink text={&template.text} />
+            <SideBarLink text={&template.text} to={&template.url}/>
         }
     }
 }
