@@ -5,6 +5,7 @@ mod header;
 mod item;
 mod list;
 mod sidebar;
+mod sidebar_link;
 mod body;
 
 use header::ListHeader;
@@ -31,12 +32,11 @@ impl Component for Model {
     fn view(&self) -> Html<Self> {
         html! {
             <div class="main">
-            
-            <h1>{ "Nested List Demo" }</h1>
-            
-                <Sidebar />
-                <Body />
+                    <div class="app_container">
                 
+                            <Sidebar />
+                            <Body />
+                    </div> 
             </div>
         }
     }
