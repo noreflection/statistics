@@ -33,8 +33,10 @@ impl Component for SideBarLink {
 
     fn view(&self) -> Html<Self> {
         html! {
-            <div class="sidebar__link" onclick=|_| Msg::UpdateText href={String::from(&self.props.to)}>
-                { &self.props.text }
+            <div class="sidebar__link">
+                <a onclick=|_| Msg::UpdateText href={String::from(&self.props.to)}>
+                    { &self.props.text }
+                </a>
             </div>
         }
     }

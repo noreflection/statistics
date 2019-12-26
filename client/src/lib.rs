@@ -1,19 +1,15 @@
-#![recursion_limit = "128"]
+#![recursion_limit = "256"]
 
 #[allow(dead_code)]
-mod header;
-mod item;
-mod list;
+use yew::prelude::*;
+
 mod sidebar;
 mod sidebar_link;
 mod body;
+mod card;
 
-use header::ListHeader;
 use sidebar::Sidebar;
-use item::ListItem;
-//use list::{List, Msg as ListMsg};
 use body::Body;
-use yew::prelude::*;
 
 pub struct Model;
 
@@ -33,10 +29,9 @@ impl Component for Model {
         html! {
             <div class="main">
                     <div class="app_container">
-                
                             <Sidebar />
                             <Body />
-                    </div> 
+                    </div>
             </div>
         }
     }

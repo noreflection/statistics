@@ -25,8 +25,11 @@ impl Component for Sidebar {
 
     fn create(_: (), _: ComponentLink<Self>) -> Self {
         let links = vec![
-            Link { text: "first_link".to_string(), url: "/first_url".to_string() },
-            Link { text: "second_link".to_string(), url: "/second_url".to_string() },
+            Link { text: "log workout".to_string(), url: "/log_workout".to_string() },
+            Link { text: "log abs".to_string(), url: "/log_abs".to_string() },
+            Link { text: "".to_string(), url: "/".to_string() },
+            Link { text: "statistics workout".to_string(), url: "/st_workout".to_string() },
+            Link { text: "statistics abs".to_string(), url: "/st_abs".to_string() },
         ];
 
         let state = State {
@@ -47,7 +50,7 @@ impl Component for Sidebar {
     }
 
     fn view(&self) -> Html<Self> {
-        let links = &self.state.links
+        let _links = &self.state.links
             .iter()
             .enumerate()
             .map(|x| self.view_links(x));
@@ -55,20 +58,16 @@ impl Component for Sidebar {
         html! {
             <div class="col sidebar" onclick=|_| Msg::UpdateTitle>
                 { for self.state.links.iter().enumerate().map(|x|self.view_links(x)) }
-//                <SideBarLink text="first" />
-//                <SideBarLink text="second" />
-//                { links }
             </div>
         }
     }
 }
 
 impl Sidebar {
-    fn view_links(&self, (idx, template): (usize, &Link)) -> Html<Self> {
-        //let tmpl = template;
+    fn view_links(&self, (_idx, template): (usize, &Link)) -> Html<Self> {
         html! {
-            <SideBarLink text={&template.text} to={&template.url}/>
+            <SideBarLink text={&template.text} 
+                         to={&template.url} />
         }
     }
 }
-

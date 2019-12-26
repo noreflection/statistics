@@ -1,55 +1,37 @@
 ﻿use yew::prelude::*;
+//use yew::html::{ChildrenRenderer, NodeRef};
 
-use crate::header::ListHeader;
-use crate::sidebar::Sidebar;
-use crate::sidebar_link::SideBarLink;
-use crate::item::ListItem;
-use crate::list::{List, Msg as ListMsg};
-
-use yew::html::{ChildrenRenderer, NodeRef};
+use crate::card::Card;
 
 pub struct Body {
     title: String,
 }
 
-//#[derive(Properties)]
-//pub struct Props {
-//    #[props(required)]
-//    pub children: ChildrenRenderer<SideBarLink>,
-//}
-
-pub enum Msg {
-    UpdateTitle,
-}
-
 impl Component for Body {
-    type Message = Msg;
+    type Message = ();
     type Properties = ();
 
     fn create(_: (), _: ComponentLink<Self>) -> Self {
-        Body { title: String::from("index") }
+        Body {
+            title: String::from("log workout")
+        }
     }
 
     fn update(&mut self, msg: Self::Message) -> ShouldRender {
         match msg {
-            Msg::UpdateTitle => {
-                self.title = String::from("updated");
-                true
-            }
+            _ => true
         }
     }
 
     fn view(&self) -> Html<Self> {
         html! {
             <div class="col other">
-                <List>
-                    <ListHeader text="Calling all Rusties!" on_hover=ListMsg::Hover />
-                    <ListItem name="Rustin" on_hover=ListMsg::Hover />
-                    <ListItem hide={true} name="Rustaroo" on_hover=ListMsg::Hover />
-                    <ListItem name="Rustifer" on_hover=ListMsg::Hover>
-                        <span>{"Hello!"}</span>
-                    </ListItem>
-                </List>
+                {&self.title}
+                <Card title={"Barbell Bench Press"}
+                      phase={"first phase"} />
+                
+                <Card title={"Barbell Squat"}
+                      phase={"first phase"} />
             </div>
         }
     }
