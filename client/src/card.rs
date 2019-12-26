@@ -28,7 +28,7 @@ impl Component for Card {
 
     fn view(&self) -> Html<Self> {
         html! {
-            <div class="card">
+            <div>
                 <div class="card__header_labels">
                     <div>
                         {&self.props.title}

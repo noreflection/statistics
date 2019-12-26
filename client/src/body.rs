@@ -25,13 +25,67 @@ impl Component for Body {
 
     fn view(&self) -> Html<Self> {
         html! {
-            <div class="col other">
-                {&self.title}
-                <Card title={"Barbell Bench Press"}
-                      phase={"first phase"} />
+            <div class="col other card_container">
+//                {&self.title}
+                <div class="card">
+                    <Card title={"Barbell Bench Press"}
+                          phase={"first phase"} />
+                 </div>
                 
-                <Card title={"Barbell Squat"}
-                      phase={"first phase"} />
+                <div class="card">
+                    <Card title={"Barbell Squat"}
+                          phase={"first phase"} />
+                 </div>
+                 
+                <div class="card">
+                    <Card title={"Barbell Squat"}
+                          phase={"first phase"} />
+                 </div>
+                 
+                <div class="card">
+                    <Card title={"Barbell Squat"}
+                          phase={"first phase"} />
+                 </div>
+                 
+                <div class="card">
+                    <Card title={"Barbell Squat"}
+                          phase={"first phase"} />
+                 </div>
+                 
+                <div class="card">
+                    <Card title={"Barbell Squat"}
+                          phase={"first phase"} />
+                 </div>
+                 
+                <div class="card">
+                    <Card title={"Barbell Squat"}
+                          phase={"first phase"} />
+                 </div>
+                 
+                <div class="card">
+                    <Card title={"Barbell Squat"}
+                          phase={"first phase"} />
+                 </div>
+                 
+                <div class="card">
+                    <Card title={"Barbell Squat"}
+                          phase={"first phase"} />
+                 </div>
+                 
+                <div class="card">
+                    <Card title={"Barbell Squat"}
+                          phase={"first phase"} />
+                 </div>
+                 
+                <div class="card">
+                    <Card title={"Barbell Squat"}
+                          phase={"first phase"} />
+                 </div>
+                 
+                <div class="card">
+                    <Card title={"Barbell Squat"}
+                          phase={"first phase"} />
+                 </div>
             </div>
         }
     }
