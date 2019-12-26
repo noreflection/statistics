@@ -4,7 +4,7 @@
 use crate::card::Card;
 
 pub struct Body {
-    title: String,
+    //title: String,
 }
 
 impl Component for Body {
@@ -13,7 +13,7 @@ impl Component for Body {
 
     fn create(_: (), _: ComponentLink<Self>) -> Self {
         Body {
-            title: String::from("log workout")
+            //title: String::from("log workout")
         }
     }
 
@@ -26,7 +26,6 @@ impl Component for Body {
     fn view(&self) -> Html<Self> {
         html! {
             <div class="col other card_container">
-//                {&self.title}
                 <div class="card">
                     <Card title={"Barbell Bench Press"}
                           phase={"first phase"} />
@@ -57,32 +56,7 @@ impl Component for Body {
                           phase={"first phase"} />
                  </div>
                  
-                <div class="card">
-                    <Card title={"Barbell Squat"}
-                          phase={"first phase"} />
-                 </div>
-                 
-                <div class="card">
-                    <Card title={"Barbell Squat"}
-                          phase={"first phase"} />
-                 </div>
-                 
-                <div class="card">
-                    <Card title={"Barbell Squat"}
-                          phase={"first phase"} />
-                 </div>
-                 
-                <div class="card">
-                    <Card title={"Barbell Squat"}
-                          phase={"first phase"} />
-                 </div>
-                 
-                <div class="card">
-                    <Card title={"Barbell Squat"}
-                          phase={"first phase"} />
-                 </div>
-                 
-                <div class="card">
+                 <div class="card">
                     <Card title={"Barbell Squat"}
                           phase={"first phase"} />
                  </div>

@@ -27,7 +27,7 @@ impl Component for Sidebar {
         let links = vec![
             Link { text: "log workout".to_string(), url: "/log_workout".to_string() },
             Link { text: "log abs".to_string(), url: "/log_abs".to_string() },
-            Link { text: "".to_string(), url: "/".to_string() },
+//            Link { text: "".to_string(), url: "/".to_string() },
             Link { text: "statistics workout".to_string(), url: "/st_workout".to_string() },
             Link { text: "statistics abs".to_string(), url: "/st_abs".to_string() },
         ];
@@ -56,7 +56,7 @@ impl Component for Sidebar {
             .map(|x| self.view_links(x));
 
         html! {
-            <div class="col sidebar" onclick=|_| Msg::UpdateTitle>
+            <div class="col sidebar card" onclick=|_| Msg::UpdateTitle>
                 { for self.state.links.iter().enumerate().map(|x|self.view_links(x)) }
             </div>
         }
@@ -66,8 +66,10 @@ impl Component for Sidebar {
 impl Sidebar {
     fn view_links(&self, (_idx, template): (usize, &Link)) -> Html<Self> {
         html! {
-            <SideBarLink text={&template.text} 
-                         to={&template.url} />
+            <div class="card">
+                <SideBarLink text={&template.text} 
+                             to={&template.url} />
+            </div>
         }
     }
 }
