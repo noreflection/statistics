@@ -56,7 +56,7 @@ impl Component for Sidebar {
             .map(|x| self.view_links(x));
 
         html! {
-            <div class="col sidebar card" onclick=|_| Msg::UpdateTitle>
+            <div class="col sidebar" onclick=|_| Msg::UpdateTitle>
                 { for self.state.links.iter().enumerate().map(|x|self.view_links(x)) }
             </div>
         }
